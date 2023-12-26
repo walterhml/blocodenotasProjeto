@@ -1,0 +1,86 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0022ff; /* Verde */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #notas {
+            background-color: #f3e7dc; /* Cor clara */
+            padding: 20px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        #notas h2 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #211c33;
+            text-align: center;
+        }
+
+        #notas ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #notas ul li {
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        #novaNota {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        #adicionarNota {
+            background-color: #ed2860;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="notas">
+        <h2>Notas</h2>
+        <ul id="listaNotas"></ul>
+        <input type="text" id="novaNota" placeholder="Nova nota">
+        <button id="adicionarNota">Adicionar Nota</button>
+    </div>
+    <script>
+        const listaNotas = document.getElementById('listaNotas');
+        const novaNota = document.getElementById('novaNota');
+        const adicionarNota = document.getElementById('adicionarNota');
+
+        adicionarNota.addEventListener('click', function() {
+            const nota = document.createElement('li');
+            nota.textContent = novaNota.value;
+            listaNotas.appendChild(nota);
+            novaNota.value = '';
+        });
+    </script>
+</body>
+</html>
